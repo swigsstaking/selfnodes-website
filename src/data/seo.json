@@ -1,0 +1,61 @@
+{
+  "site": {
+    "name": "Selfnodes",
+    "slug": "selfnodes",
+    "domain": "selfnodes.swigs.online",
+    "description": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes. Secure and scalable Web3 infrastructure.",
+    "logo": "/logo.png"
+  },
+  "pages": {
+    "home": {
+      "title": "Selfnodes | Decentralized Validator Hosting & RPC Services",
+      "description": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes. Secure and scalable Web3 infrastructure in a few clicks.",
+      "keywords": ["validator hosting", "ethereum", "lukso", "gnosis", "rpc nodes", "staking", "web3 infrastructure"],
+      "ogTitle": "Selfnodes - Web3 Infrastructure",
+      "ogDescription": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://selfnodes.swigs.online"
+    },
+    "services": {
+      "title": "Services | Selfnodes",
+      "description": "Validator Monitoring, Custom RPC Nodes, and Turnkey Delegated Staking services hosted in Switzerland.",
+      "keywords": ["validator monitoring", "rpc nodes", "staking services"],
+      "ogTitle": "Selfnodes Services",
+      "ogDescription": "Discover our Validator Monitoring and Custom Node services.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://selfnodes.swigs.online/services"
+    },
+    "monitoring": {
+      "title": "Validator Monitoring | Selfnodes",
+      "description": "Monitor your validator in real time. Get instant alerts via Telegram if your node goes offline.",
+      "keywords": ["validator monitoring", "telegram alerts", "node uptime"],
+      "ogTitle": "Validator Monitoring",
+      "ogDescription": "Real-time monitoring for your validators.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://selfnodes.swigs.online/monitoring"
+    },
+    "contact": {
+      "title": "Contact | Selfnodes",
+      "description": "Contact Selfnodes support. Human support via Telegram & Email.",
+      "keywords": ["contact", "support", "selfnodes"],
+      "ogTitle": "Contact Selfnodes",
+      "ogDescription": "Get in touch with our support team.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://selfnodes.swigs.online/contact"
+    }
+  },
+  "global": {
+    "siteName": "Selfnodes",
+    "siteUrl": "https://selfnodes.swigs.online",
+    "logo": "/logo.png",
+    "language": "en",
+    "social": {
+      "telegram": "https://t.me/selfnodes",
+      "twitter": ""
+    },
+    "contact": {
+      "email": "support@selfnodes.com",
+      "telegram": "@selfnodes"
+    }
+  }
+}

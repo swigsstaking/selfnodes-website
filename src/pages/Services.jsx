@@ -6,99 +6,140 @@ const Services = () => {
     <>
       <SEOHead page="services" />
       
-      <div className="bg-primary-900 text-white min-h-screen pt-20">
+      <div className="relative min-h-screen pt-24 pb-20 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-dark-950 -z-10">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-brand-purple/10 rounded-full blur-[120px]"></div>
+        </div>
+
         {/* Header */}
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div className="container mx-auto px-4 py-16 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-purple">Services</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Professional Web3 infrastructure services tailored to your needs. From validator hosting to custom RPC nodes.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="container mx-auto px-4 pb-20">
+        <div className="container mx-auto px-4 pb-20 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             
             {/* Managed Validators */}
-            <div className="bg-primary-800 rounded-2xl p-8 border border-primary-700 hover:border-secondary-500 transition-colors">
-              <div className="w-14 h-14 bg-secondary-500/20 rounded-lg flex items-center justify-center mb-6 text-secondary-400">
-                <Server size={32} />
+            <div className="group relative p-8 rounded-2xl bg-dark-900/50 border border-white/10 hover:border-brand-purple/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-brand-purple/10 rounded-xl flex items-center justify-center mb-6 text-brand-purple group-hover:scale-110 transition-transform">
+                  <Server size={32} />
+                </div>
+                <h2 className="text-2xl font-display font-bold mb-4 text-white">Managed Validator Nodes</h2>
+                <p className="text-gray-400 mb-8 h-20 leading-relaxed">
+                  Run your own validator without the technical hassle. We handle updates, maintenance, and monitoring 24/7.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Ethereum Mainnet Support
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    99.9% Uptime Guarantee
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Non-custodial (you keep keys)
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Swiss Hosted Infrastructure
+                  </li>
+                </ul>
+                <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 text-center rounded-xl font-bold text-white transition-all shadow-lg shadow-brand-purple/20">
+                  Contact Sales
+                </a>
               </div>
-              <h2 className="text-2xl font-bold mb-4">Managed Validator Nodes</h2>
-              <p className="text-gray-300 mb-6 h-20">
-                Run your own validator without the technical hassle. We handle updates, maintenance, and monitoring 24/7.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Ethereum, Gnosis, Lukso support
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> 99.9% Uptime Guarantee
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Non-custodial (you keep keys)
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Swiss Hosted Infrastructure
-                </li>
-              </ul>
-              <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-secondary-600 hover:bg-secondary-500 text-center rounded-lg font-bold transition-colors">
-                Contact Sales
-              </a>
             </div>
 
             {/* RPC Nodes */}
-            <div className="bg-primary-800 rounded-2xl p-8 border border-primary-700 hover:border-secondary-500 transition-colors">
-              <div className="w-14 h-14 bg-secondary-500/20 rounded-lg flex items-center justify-center mb-6 text-secondary-400">
-                <Zap size={32} />
+            <div className="group relative p-8 rounded-2xl bg-dark-900/50 border border-white/10 hover:border-brand-cyan/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 text-brand-cyan group-hover:scale-110 transition-transform">
+                  <Zap size={32} />
+                </div>
+                <h2 className="text-2xl font-display font-bold mb-4 text-white">Dedicated RPC Nodes</h2>
+                <p className="text-gray-400 mb-8 h-20 leading-relaxed">
+                  High-performance private RPC endpoints for your dApps or trading bots. Low latency and unlimited requests.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    WebSocket & HTTP support
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Custom Rate Limits
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Multi-chain Support
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Dedicated Resources
+                  </li>
+                </ul>
+                <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-dark-800 hover:bg-dark-700 border border-white/10 text-center rounded-xl font-bold text-white transition-colors">
+                  Get Access
+                </a>
               </div>
-              <h2 className="text-2xl font-bold mb-4">Dedicated RPC Nodes</h2>
-              <p className="text-gray-300 mb-6 h-20">
-                High-performance private RPC endpoints for your dApps or trading bots. Low latency and unlimited requests.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> WebSocket & HTTP support
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Custom Rate Limits
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Multi-chain Support
-                </li>
-                <li className="flex items-center gap-3 text-gray-300">
-                  <Check size={20} className="text-green-400" /> Dedicated Resources
-                </li>
-              </ul>
-              <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-primary-600 hover:bg-primary-500 text-center rounded-lg font-bold transition-colors">
-                Get Access
-              </a>
             </div>
           </div>
 
           {/* Security Section */}
-          <div className="mt-20 max-w-4xl mx-auto bg-primary-800 rounded-2xl p-12 border border-primary-700 text-center">
-            <Shield size={48} className="mx-auto text-secondary-400 mb-6" />
-            <h2 className="text-3xl font-bold mb-6">Security First Architecture</h2>
-            <p className="text-gray-300 mb-8">
+          <div className="mt-20 max-w-4xl mx-auto glass rounded-2xl p-12 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple"></div>
+            
+            <Shield size={48} className="mx-auto text-brand-orange mb-6" />
+            <h2 className="text-3xl font-display font-bold mb-6 text-white">Security First Architecture</h2>
+            <p className="text-gray-400 mb-12 leading-relaxed">
               Our infrastructure is located in Tier 4 datacenters in Switzerland. We use enterprise-grade hardware and redundant connections to ensure maximum availability and security for your assets.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 text-left mt-12">
-              <div>
+            <div className="grid md:grid-cols-3 gap-8 text-left">
+              <div className="p-4 rounded-xl bg-dark-900/50 border border-white/5">
                 <h3 className="font-bold text-white mb-2 flex items-center gap-2">
-                  <Lock size={18} className="text-secondary-400" /> Physical Security
+                  <Lock size={18} className="text-brand-purple" /> Physical Security
                 </h3>
                 <p className="text-sm text-gray-400">Biometric access control, 24/7 guards, and video surveillance.</p>
               </div>
-              <div>
+              <div className="p-4 rounded-xl bg-dark-900/50 border border-white/5">
                 <h3 className="font-bold text-white mb-2 flex items-center gap-2">
-                  <Server size={18} className="text-secondary-400" /> Hardware
+                  <Server size={18} className="text-brand-cyan" /> Hardware
                 </h3>
                 <p className="text-sm text-gray-400">Enterprise NVMe SSDs and ECC RAM for data integrity.</p>
               </div>
-              <div>
+              <div className="p-4 rounded-xl bg-dark-900/50 border border-white/5">
                 <h3 className="font-bold text-white mb-2 flex items-center gap-2">
-                  <Shield size={18} className="text-secondary-400" /> Network
+                  <Shield size={18} className="text-brand-orange" /> Network
                 </h3>
                 <p className="text-sm text-gray-400">DDoS protection and redundant 10Gbps uplinks.</p>
               </div>
