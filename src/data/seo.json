@@ -2,37 +2,37 @@
   "site": {
     "name": "Selfnodes",
     "slug": "selfnodes",
-    "domain": "selfnodes.swigs.online",
+    "domain": "www.selfnodes.com",
     "description": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes. Secure and scalable Web3 infrastructure.",
     "logo": "/logo.png"
   },
   "pages": {
     "home": {
-      "title": "Selfnodes | Decentralized Validator Hosting & RPC Services",
+      "title": "Selfnodes | Decentralized Validator Hosting & Monitoring",
       "description": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes. Secure and scalable Web3 infrastructure in a few clicks.",
       "keywords": ["validator hosting", "ethereum", "lukso", "gnosis", "rpc nodes", "staking", "web3 infrastructure"],
       "ogTitle": "Selfnodes - Web3 Infrastructure",
       "ogDescription": "Launch, monitor, and manage your Ethereum, Lukso or Gnosis validators with Selfnodes.",
       "ogImage": "/og-image.jpg",
-      "canonical": "https://selfnodes.swigs.online"
+      "canonical": "https://www.selfnodes.com"
     },
     "services": {
       "title": "Services | Selfnodes",
       "description": "Validator Monitoring, Custom RPC Nodes, and Turnkey Delegated Staking services hosted in Switzerland.",
-      "keywords": ["validator monitoring", "rpc nodes", "staking services"],
+      "keywords": ["validator monitoring", "rpc nodes", "staking services", "switzerland"],
       "ogTitle": "Selfnodes Services",
       "ogDescription": "Discover our Validator Monitoring and Custom Node services.",
       "ogImage": "/og-image.jpg",
-      "canonical": "https://selfnodes.swigs.online/services"
+      "canonical": "https://www.selfnodes.com/services"
     },
     "monitoring": {
       "title": "Validator Monitoring | Selfnodes",
       "description": "Monitor your validator in real time. Get instant alerts via Telegram if your node goes offline.",
-      "keywords": ["validator monitoring", "telegram alerts", "node uptime"],
+      "keywords": ["validator monitoring", "telegram alerts", "node uptime", "ethereum monitoring"],
       "ogTitle": "Validator Monitoring",
       "ogDescription": "Real-time monitoring for your validators.",
       "ogImage": "/og-image.jpg",
-      "canonical": "https://selfnodes.swigs.online/monitoring"
+      "canonical": "https://www.selfnodes.com/monitoring"
     },
     "contact": {
       "title": "Contact | Selfnodes",
@@ -41,12 +41,66 @@
       "ogTitle": "Contact Selfnodes",
       "ogDescription": "Get in touch with our support team.",
       "ogImage": "/og-image.jpg",
-      "canonical": "https://selfnodes.swigs.online/contact"
+      "canonical": "https://www.selfnodes.com/contact"
+    },
+    "dashboard": {
+      "title": "Dashboard | Selfnodes",
+      "description": "Manage your validators and monitor their performance in real-time.",
+      "keywords": ["dashboard", "validator management", "monitoring"],
+      "ogTitle": "Selfnodes Dashboard",
+      "ogDescription": "Manage and monitor your validators.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/dashboard"
+    },
+    "login": {
+      "title": "Login | Selfnodes",
+      "description": "Sign in to your Selfnodes account to manage your validators.",
+      "keywords": ["login", "sign in", "selfnodes"],
+      "ogTitle": "Login to Selfnodes",
+      "ogDescription": "Access your validator dashboard.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/login"
+    },
+    "register": {
+      "title": "Register | Selfnodes",
+      "description": "Create your Selfnodes account and start monitoring your validators.",
+      "keywords": ["register", "sign up", "create account"],
+      "ogTitle": "Create Selfnodes Account",
+      "ogDescription": "Join Selfnodes and start monitoring your validators.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/register"
+    },
+    "calculator": {
+      "title": "Staking Calculator | Selfnodes",
+      "description": "Calculate your potential staking rewards for Ethereum, Lukso and Gnosis validators.",
+      "keywords": ["staking calculator", "ethereum rewards", "lukso rewards", "gnosis rewards"],
+      "ogTitle": "Staking Calculator",
+      "ogDescription": "Calculate your potential validator rewards.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/calculator"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Selfnodes",
+      "description": "Selfnodes privacy policy. Learn how we protect your data.",
+      "keywords": ["privacy policy", "data protection", "gdpr"],
+      "ogTitle": "Privacy Policy",
+      "ogDescription": "How Selfnodes protects your data.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/privacy"
+    },
+    "terms": {
+      "title": "Terms of Service | Selfnodes",
+      "description": "Selfnodes terms of service and conditions of use.",
+      "keywords": ["terms of service", "conditions", "legal"],
+      "ogTitle": "Terms of Service",
+      "ogDescription": "Selfnodes terms and conditions.",
+      "ogImage": "/og-image.jpg",
+      "canonical": "https://www.selfnodes.com/terms"
     }
   },
   "global": {
     "siteName": "Selfnodes",
-    "siteUrl": "https://selfnodes.swigs.online",
+    "siteUrl": "https://www.selfnodes.com",
     "logo": "/logo.png",
     "language": "en",
     "social": {
