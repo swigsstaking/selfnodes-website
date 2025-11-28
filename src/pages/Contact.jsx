@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 
 const Contact = () => {
@@ -29,16 +29,6 @@ const Contact = () => {
                   <h2 className="text-2xl font-bold mb-6 text-white font-display">Contact Information</h2>
                   
                   <div className="space-y-6">
-                    <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group p-4 rounded-xl hover:bg-white/5">
-                      <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform text-brand-purple">
-                        <Send size={24} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-white">Telegram Support</div>
-                        <div className="text-sm text-gray-400">@selfnodes</div>
-                      </div>
-                    </a>
-
                     <a href="mailto:support@selfnodes.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group p-4 rounded-xl hover:bg-white/5">
                       <div className="w-12 h-12 bg-brand-cyan/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform text-brand-cyan">
                         <Mail size={24} />
@@ -66,15 +56,13 @@ const Contact = () => {
                   
                   <h3 className="text-2xl font-bold mb-4 font-display">Need Urgent Support?</h3>
                   <p className="mb-8 opacity-90 leading-relaxed">
-                    For critical issues with your validator, please use our dedicated Telegram support channel for faster response times.
+                    For critical issues with your validator, please contact us via email for faster response times.
                   </p>
                   <a 
-                    href="https://t.me/selfnodes" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="mailto:support@selfnodes.com"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-purple rounded-lg font-bold hover:bg-gray-50 transition-colors shadow-lg"
                   >
-                    <MessageSquare size={20} /> Contact Support
+                    <Mail size={20} /> Contact Support
                   </a>
                 </div>
               </div>

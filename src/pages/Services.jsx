@@ -1,4 +1,5 @@
-import { Shield, Zap, Server, Lock, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Shield, Server, Lock, Check, Activity, Bell, Calculator } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 
 const Services = () => {
@@ -18,13 +19,13 @@ const Services = () => {
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-purple">Services</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Professional Web3 infrastructure services tailored to your needs. From validator hosting to custom RPC nodes.
+            Professional Web3 infrastructure services tailored to your needs. From validator hosting to real-time monitoring.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="container mx-auto px-4 pb-20 relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             
             {/* Managed Validators */}
             <div className="group relative p-8 rounded-2xl bg-dark-900/50 border border-white/10 hover:border-brand-purple/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
@@ -64,36 +65,42 @@ const Services = () => {
                     Swiss Hosted Infrastructure
                   </li>
                 </ul>
-                <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 text-center rounded-xl font-bold text-white transition-all shadow-lg shadow-brand-purple/20">
-                  Contact Sales
-                </a>
+                <Link to="/migrate" className="block w-full py-4 bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 text-center rounded-xl font-bold text-white transition-all shadow-lg shadow-brand-purple/20">
+                  Get Started
+                </Link>
               </div>
             </div>
 
-            {/* RPC Nodes */}
+            {/* Validator Monitoring */}
             <div className="group relative p-8 rounded-2xl bg-dark-900/50 border border-white/10 hover:border-brand-cyan/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10">
                 <div className="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 text-brand-cyan group-hover:scale-110 transition-transform">
-                  <Zap size={32} />
+                  <Activity size={32} />
                 </div>
-                <h2 className="text-2xl font-display font-bold mb-4 text-white">Dedicated RPC Nodes</h2>
+                <h2 className="text-2xl font-display font-bold mb-4 text-white">Validator Monitoring</h2>
                 <p className="text-gray-400 mb-8 h-20 leading-relaxed">
-                  High-performance private RPC endpoints for your dApps or trading bots. Low latency and unlimited requests.
+                  Real-time monitoring for your validators. Get instant alerts when something goes wrong and track performance metrics.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3 text-gray-300">
                     <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                       <Check size={12} className="text-green-500" />
                     </div>
-                    WebSocket & HTTP support
+                    Real-time Status Dashboard
                   </li>
                   <li className="flex items-center gap-3 text-gray-300">
                     <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
                       <Check size={12} className="text-green-500" />
                     </div>
-                    Custom Rate Limits
+                    Telegram Alerts (Coming Soon)
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <Check size={12} className="text-green-500" />
+                    </div>
+                    Performance Analytics
                   </li>
                   <li className="flex items-center gap-3 text-gray-300">
                     <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -101,18 +108,34 @@ const Services = () => {
                     </div>
                     Multi-chain Support
                   </li>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
-                      <Check size={12} className="text-green-500" />
-                    </div>
-                    Dedicated Resources
-                  </li>
                 </ul>
-                <a href="https://t.me/selfnodes" target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-dark-800 hover:bg-dark-700 border border-white/10 text-center rounded-xl font-bold text-white transition-colors">
-                  Get Access
-                </a>
+                <Link to="/monitoring" className="block w-full py-4 bg-dark-800 hover:bg-dark-700 border border-white/10 text-center rounded-xl font-bold text-white transition-colors">
+                  Start Monitoring
+                </Link>
               </div>
             </div>
+
+          </div>
+
+          {/* Calculator CTA */}
+          <div className="mt-16 max-w-2xl mx-auto">
+            <Link 
+              to="/calculator"
+              className="group flex items-center justify-between p-6 glass rounded-2xl border border-white/10 hover:border-brand-cyan/50 transition-all hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-brand-cyan to-brand-purple rounded-xl flex items-center justify-center">
+                  <Calculator size={28} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Staking Calculator</h3>
+                  <p className="text-gray-400 text-sm">Estimate your rewards and ROI before you start</p>
+                </div>
+              </div>
+              <div className="text-brand-cyan group-hover:translate-x-2 transition-transform">
+                →
+              </div>
+            </Link>
           </div>
 
           {/* Security Section */}
@@ -129,7 +152,7 @@ const Services = () => {
                 <h3 className="font-bold text-white mb-2 flex items-center gap-2">
                   <Lock size={18} className="text-brand-purple" /> Physical Security
                 </h3>
-                <p className="text-sm text-gray-400">Biometric access control, 24/7 guards, and video surveillance.</p>
+                <p className="text-sm text-gray-400">24/7 guards and video surveillance.</p>
               </div>
               <div className="p-4 rounded-xl bg-dark-900/50 border border-white/5">
                 <h3 className="font-bold text-white mb-2 flex items-center gap-2">

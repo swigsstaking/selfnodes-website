@@ -1,19 +1,33 @@
 import { useQuery } from '@tanstack/react-query';
 import seoData from '../data/seo.json';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://swigs.online/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://192.168.110.73:3000';
+const SITE_SLUG = seoData.site.slug;
 
 export const useSiteInfo = () => {
   // Récupérer les infos depuis l'API
   const { data: apiData } = useQuery({
-    queryKey: ['siteInfo', seoData.site.slug],
+    queryKey: ['siteInfo', SITE_SLUG],
     queryFn: async () => {
-      const response = await fetch(`${API_URL}/public/sites/${seoData.site.slug}`);
-      if (!response.ok) throw new Error('Failed to fetch site info');
-      const json = await response.json();
-      return json.data;
+      const url = `${API_BASE}/api/public/sites/${SITE_SLUG}`;
+      console.log('Fetching Site Info:', url);
+      
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            const text = await response.text();
+            console.error('Site Info Fetch Error:', response.status, text);
+            throw new Error('Failed to fetch site info');
+        }
+        const json = await response.json();
+        console.log('Site Info Success:', json);
+        return json.data;
+      } catch (err) {
+        console.error('Fetch Exception:', err);
+        throw err;
+      }
     },
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 60, // 1 heure
     cacheTime: 1000 * 60 * 10, // 10 minutes
   });
 

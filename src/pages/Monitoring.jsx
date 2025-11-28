@@ -22,7 +22,7 @@ const Monitoring = () => {
     return /^0x[a-fA-F0-9]{40,98}$/.test(entry) || /^\d+$/.test(entry);
   };
 
-  const handleAddValidator = () => {
+  const handleAddValidator = async () => {
     const rawEntries = validatorInput.split(',').map(x => x.trim()).filter(x => x !== "");
     
     if (rawEntries.length === 0) return;
@@ -34,20 +34,61 @@ const Monitoring = () => {
       return;
     }
 
-    // Mock adding validators
-    const newValidators = rawEntries.map(id => ({
-      id,
-      chain: selectedChain.name,
-      status: 'syncing', // Initial status
-      addedAt: new Date().toISOString()
-    }));
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setNotification({ type: 'error', message: 'Please login to add validators.' });
+      return;
+    }
 
-    setValidators([...validators, ...newValidators]);
+    let successCount = 0;
+    let errors = [];
+
+    for (const entry of rawEntries) {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/nodes/validators`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ 
+            input: entry, 
+            network: selectedChain.name.toLowerCase() 
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          successCount++;
+          // Add to local state for immediate UI feedback
+          setValidators(prev => [...prev, {
+            id: entry,
+            chain: selectedChain.name,
+            status: data.data?.status || 'syncing',
+            addedAt: new Date().toISOString()
+          }]);
+        } else {
+          errors.push(`${entry}: ${data.message || 'Failed'}`);
+        }
+      } catch (e) {
+        errors.push(`${entry}: Network error`);
+      }
+    }
+
     setValidatorInput('');
-    setNotification({ type: 'success', message: `✅ ${rawEntries.length} validator(s) added successfully.` });
     
-    // Clear notification after 3s
-    setTimeout(() => setNotification(null), 3000);
+    if (successCount > 0) {
+      setNotification({ type: 'success', message: `${successCount} validator(s) added successfully.` });
+    }
+    if (errors.length > 0) {
+      setTimeout(() => {
+        setNotification({ type: 'error', message: errors.join(', ') });
+      }, successCount > 0 ? 3000 : 0);
+    }
+    
+    // Clear notification after 5s
+    setTimeout(() => setNotification(null), 5000);
   };
 
   return (

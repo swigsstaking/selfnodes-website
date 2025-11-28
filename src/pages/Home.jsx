@@ -136,7 +136,7 @@ const Home = () => {
               <div className="space-y-4">
                 {[
                   'Full GDPR Compliance',
-                  '24/7 Physical Security & Biometrics',
+                  '24/7 Physical Security',
                   'DDoS Protection & Redundant Power',
                   'Enterprise NVMe Storage'
                 ].map((item, i) => (

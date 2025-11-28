@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X, Github, LogIn, LogOut, User } from 'lucide-react';
 import { useState } from 'react';
 import Logo from './Logo';
+import { useAuth } from '../context/AuthContext';
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { isAuthenticated, logout } = useAuth();
 
   const isActive = (path) => {
     return location.pathname === path 
@@ -28,6 +30,21 @@ const Layout = ({ children }) => {
               <Link to="/monitoring" className={isActive('/monitoring')}>Monitoring</Link>
               <Link to="/dashboard" className={isActive('/dashboard')}>Dashboard</Link>
               <Link to="/contact" className={isActive('/contact')}>Contact</Link>
+              {isAuthenticated ? (
+                <button 
+                  onClick={logout} 
+                  className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 border border-red-500/20 rounded-lg hover:bg-red-500/20 transition-all"
+                >
+                  <LogOut size={16} /> Logout
+                </button>
+              ) : (
+                <Link 
+                  to="/login" 
+                  className="flex items-center gap-2 px-4 py-2 bg-brand-purple/10 text-brand-purple border border-brand-purple/20 rounded-lg hover:bg-brand-purple/20 transition-all"
+                >
+                  <LogIn size={16} /> Login
+                </Link>
+              )}
               <Link 
                 to="/migrate" 
                 className="bg-white text-dark-950 hover:bg-gray-100 px-5 py-2 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/5"
@@ -54,6 +71,22 @@ const Layout = ({ children }) => {
             <Link to="/monitoring" onClick={() => setIsMenuOpen(false)} className={isActive('/monitoring')}>Monitoring</Link>
             <Link to="/dashboard" onClick={() => setIsMenuOpen(false)} className={isActive('/dashboard')}>Dashboard</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)} className={isActive('/contact')}>Contact</Link>
+            {isAuthenticated ? (
+              <button 
+                onClick={() => { logout(); setIsMenuOpen(false); }} 
+                className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 border border-red-500/20 rounded-lg"
+              >
+                <LogOut size={16} /> Logout
+              </button>
+            ) : (
+              <Link 
+                to="/login" 
+                onClick={() => setIsMenuOpen(false)} 
+                className="flex items-center gap-2 px-4 py-2 bg-brand-purple/10 text-brand-purple border border-brand-purple/20 rounded-lg"
+              >
+                <LogIn size={16} /> Login
+              </Link>
+            )}
             <Link 
               to="/migrate"
               onClick={() => setIsMenuOpen(false)}
@@ -85,8 +118,8 @@ const Layout = ({ children }) => {
               <h4 className="text-white font-bold mb-6">Services</h4>
               <ul className="space-y-4 text-gray-500 text-sm">
                 <li><Link to="/services" className="hover:text-brand-cyan transition-colors">Validator Hosting</Link></li>
-                <li><Link to="/services" className="hover:text-brand-cyan transition-colors">RPC Nodes</Link></li>
                 <li><Link to="/monitoring" className="hover:text-brand-cyan transition-colors">Monitoring</Link></li>
+                <li><Link to="/calculator" className="hover:text-brand-cyan transition-colors">Staking Calculator</Link></li>
               </ul>
             </div>
 
@@ -95,8 +128,8 @@ const Layout = ({ children }) => {
               <ul className="space-y-4 text-gray-500 text-sm">
                 <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">Contact</Link></li>
-                <li><a href="#" className="hover:text-brand-cyan transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-brand-cyan transition-colors">Privacy Policy</a></li>
+                <li><Link to="/terms" className="hover:text-brand-cyan transition-colors">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="hover:text-brand-cyan transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
 
@@ -105,9 +138,6 @@ const Layout = ({ children }) => {
               <div className="flex gap-4">
                 <a href="https://github.com/selfnodes" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all">
                   <Github size={20} />
-                </a>
-                <a href="https://t.me/selfnodes" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                 </a>
               </div>
             </div>
