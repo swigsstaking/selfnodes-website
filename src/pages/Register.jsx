@@ -7,7 +7,7 @@ import { useAuth } from '../context/AuthContext';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { register, loginWithGoogle, googleClientId } = useAuth();
+  const { register, loginWithGoogle, googleClientId, siteLoaded } = useAuth();
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -78,7 +78,7 @@ const Register = () => {
             )}
 
             {/* Google Signup Button */}
-            {googleClientId && (
+            {siteLoaded && googleClientId && (
               <div className="mb-6">
                 <div className="flex justify-center">
                   <GoogleLogin

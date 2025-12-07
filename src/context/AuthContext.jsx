@@ -120,6 +120,8 @@ export const AuthProvider = ({ children }) => {
 
   // Get Google Client ID from site config
   const googleClientId = site?.googleOAuthConfig?.clientId;
+  const googleEnabled = site?.googleOAuthConfig?.enabled;
+  const siteLoaded = site?._isFetched;
 
   const contextValue = {
     user,
@@ -130,12 +132,16 @@ export const AuthProvider = ({ children }) => {
     loading,
     isAuthenticated: !!user,
     site,
-    googleClientId
+    googleClientId,
+    siteLoaded
   };
+
+  // Attendre que le site soit chargé pour décider si on affiche GoogleOAuthProvider
+  const shouldShowGoogleAuth = siteLoaded && googleEnabled && googleClientId;
 
   return (
     <AuthContext.Provider value={contextValue}>
-      {googleClientId ? (
+      {shouldShowGoogleAuth ? (
         <GoogleOAuthProvider clientId={googleClientId}>
           {children}
         </GoogleOAuthProvider>

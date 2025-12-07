@@ -6,8 +6,10 @@ const SEOHead = ({ page = 'home' }) => {
   const seo = useSEO(page);
   const siteInfo = useSiteInfo();
   
-  // Favicon dynamique depuis l'admin
-  const faviconUrl = siteInfo?.favicon?.url || '/favicon.ico';
+  // Favicon dynamique depuis l'admin (peut être string ou objet avec url)
+  const faviconUrl = typeof siteInfo?.favicon === 'string' 
+    ? siteInfo.favicon 
+    : (siteInfo?.favicon?.url || '/favicon.svg');
   
   return (
     <Helmet>

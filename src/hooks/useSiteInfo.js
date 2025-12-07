@@ -6,7 +6,7 @@ const SITE_SLUG = seoData.site.slug;
 
 export const useSiteInfo = () => {
   // Récupérer les infos depuis l'API
-  const { data: apiData } = useQuery({
+  const { data: apiData, isLoading, isFetched } = useQuery({
     queryKey: ['siteInfo', SITE_SLUG],
     queryFn: async () => {
       const url = `${API_BASE}/api/public/sites/${SITE_SLUG}`;
@@ -32,9 +32,13 @@ export const useSiteInfo = () => {
   });
 
   // Fusionner les données de l'API avec les données statiques (fallback)
-  return {
+  const siteData = {
     ...seoData.site,
     ...seoData.global,
     ...apiData, // Les données de l'API écrasent les données statiques
+    _isLoading: isLoading,
+    _isFetched: isFetched,
   };
+  
+  return siteData;
 };
