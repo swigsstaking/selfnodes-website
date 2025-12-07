@@ -14,11 +14,13 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Calculator from './pages/Calculator';
 import { AuthProvider } from './context/AuthContext';
+import Favicon from './components/Favicon';
 
 function App() {
   return (
     <HelmetProvider>
       <AuthProvider>
+        <Favicon />
         <BrowserRouter>
           <Layout>
             <Routes>
